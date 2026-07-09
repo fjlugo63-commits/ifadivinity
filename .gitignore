@@ -2,11 +2,8 @@
 node_modules/
 .pnpm-store/
 
-# Build outputs
+# Build output
 dist/
-build/
-.next/
-out/
 
 # Environment variables
 .env
@@ -20,7 +17,6 @@ out/
 .idea/
 *.swp
 *.swo
-*~
 
 # OS files
 .DS_Store
@@ -29,8 +25,6 @@ Thumbs.db
 # Debug logs
 npm-debug.log*
 pnpm-debug.log*
-yarn-debug.log*
-yarn-error.log*
 
 # Testing
 coverage/
@@ -42,6 +36,5 @@ supabase/.temp/
 
 # Misc
 *.tsbuildinfo
-.mgx/
-.atoms/
 template_config.json
+.mgx/

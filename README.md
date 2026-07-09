@@ -1,95 +1,65 @@
-# Ifa Divinity Marketplace
+# Shadcn-UI Template Usage Instructions
 
-A marketplace platform for Ifa divination products and readings. Features buyer browsing/checkout, seller product management, admin panel, and booking system for readings.
+## technology stack
 
-## Tech Stack
+This project is built with:
 
-- **Frontend**: React + TypeScript + Vite
-- **Styling**: Tailwind CSS + shadcn/ui
-- **Authentication**: Supabase Auth (email/password, role-based)
-- **Database**: Supabase PostgreSQL with Row Level Security
-- **Payments**: Stripe (test mode)
-- **Fonts**: Rubik (headings) + Nunito Sans (body)
+- Vite
+- TypeScript
+- React
+- shadcn-ui
+- Tailwind CSS
 
-## Features
+All shadcn/ui components have been downloaded under `@/components/ui`.
 
-- 🛒 **Marketplace** — Browse and purchase Ifa divination products
-- 📅 **Booking System** — Schedule readings with practitioners
-- 👤 **Role-Based Access** — Buyer, Seller, Admin, Awo (practitioner) portals
-- 💳 **Stripe Checkout** — Secure payment processing
-- 🔒 **Row Level Security** — Data protection at the database level
+## File Structure
 
-## Getting Started
+- `index.html` - HTML entry point
+- `vite.config.ts` - Vite configuration file
+- `tailwind.config.ts` - Tailwind CSS configuration file
+- `package.json` - NPM dependencies and scripts
+- `src/main.tsx` - Project entry point
+- `src/App.tsx` - Router shell (imports pages and sets up routes)
+- `src/pages/Index.tsx` - Main page entry point for `/` by default; replace the placeholder page here unless you explicitly reroute `/` elsewhere
+- `src/index.css` - Existing CSS configuration
 
-### Prerequisites
+## Components
 
-- Node.js 18+
-- pnpm
+- All shadcn/ui components are pre-downloaded and available at `@/components/ui`
 
-### Installation
+## Styling
 
-```bash
-cd frontend
-pnpm install
+- Add global styles to `src/index.css` or create new CSS files as needed
+- Use Tailwind classes for styling components
+
+## Development
+
+- Import components from `@/components/ui` in your React components
+- Customize the UI by modifying the Tailwind configuration
+- Do not stop after editing isolated components or only `src/App.tsx`. The default template homepage lives in `src/pages/Index.tsx`, and leaving `Welcome to Atoms` there means the app is still unfinished.
+- Completion check: either replace `src/pages/Index.tsx` with your real homepage, or update the `/` route in `src/App.tsx` so the live homepage no longer renders the default placeholder page.
+
+## Note
+
+- The `@/` path alias points to the `src/` directory
+- Do NOT modify the title, description, and logo in `index.html` — they are managed by the overview system via `data-mgx-overview` markers.
+
+# Commands
+
+**Install Dependencies**
+
+```shell
+pnpm i
 ```
 
-### Environment Variables
+**Start Preview**
 
-Create a `.env` file in the `frontend/` directory:
-
-```env
-VITE_SUPABASE_URL=your_supabase_project_url
-VITE_SUPABASE_ANON_KEY=your_supabase_anon_key
-VITE_STRIPE_PUBLISHABLE_KEY=your_stripe_publishable_key
-```
-
-### Development
-
-```bash
-cd frontend
+```shell
 pnpm run dev
 ```
 
-The app will be available at `http://localhost:3000`.
+**To build**
 
-### Build
-
-```bash
-cd frontend
+```shell
 pnpm run build
 ```
-
-## Project Structure
-
-```
-app/
-├── frontend/           # React frontend application
-│   ├── src/
-│   │   ├── components/ # Reusable UI components
-│   │   ├── pages/      # Page components (routes)
-│   │   ├── lib/        # Utilities, Supabase client, helpers
-│   │   └── hooks/      # Custom React hooks
-│   ├── public/         # Static assets
-│   └── supabase/       # Supabase configuration & migrations
-└── README.md           # This file
-```
-
-## User Roles
-
-| Role | Access |
-|------|--------|
-| **Buyer** | Browse products, make purchases, book readings |
-| **Seller** | Manage product listings, view orders |
-| **Awo** | Manage consultations, readings calendar |
-| **Admin** | Full platform management, user oversight |
-
-## Deployment
-
-1. Build the frontend: `pnpm run build`
-2. Deploy the `dist/` folder to your hosting provider (Vercel, Netlify, etc.)
-3. Set environment variables on your hosting platform
-4. Configure Supabase project URL and keys
-
-## License
-
-MIT
